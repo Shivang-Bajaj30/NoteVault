@@ -193,7 +193,9 @@ export default function AppLayout() {
                 </div>
                 {user?.role === 'moderator' && (
                   <span className="text-[10px] font-mono text-amber-700">
-                    {user?.isTrusted ? 'TRUSTED' : '2/5'}
+                    {user.isTrusted
+                      ? 'TRUSTED'
+                      : `${user.cleanUploadCount ?? 0}/${user.trustThreshold ?? 5}`}
                   </span>
                 )}
               </NavLink>
@@ -226,7 +228,7 @@ export default function AppLayout() {
                 <TrustBadge
                   isTrusted={isTrusted}
                   cleanCount={user?.cleanUploadCount ?? (isTrusted ? 5 : 0)}
-                  threshold={5}
+                  threshold={user?.trustThreshold ?? 5}
                 />
               </div>
               <p className="text-[11px] text-slate-600 leading-snug">

@@ -38,7 +38,7 @@ public class AuthContext {
     public User requireRole(HttpServletRequest request, String... allowedRoles) {
         User user = require(request);
         for (String role : allowedRoles) {
-            if (user.role.equals(role)) {
+            if (role.equals(user.role)) {
                 return user;
             }
         }

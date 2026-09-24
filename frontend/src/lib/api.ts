@@ -3,10 +3,7 @@ import axios from 'axios'
 export const isDemoMode = import.meta.env.VITE_DEMO_MODE === 'true'
 
 export const api = axios.create({
-  baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080',
-  headers: {
-    'Content-Type': 'application/json',
-  },
+  baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:8080/api',
 })
 
 export function getApiErrorMessage(error: unknown, fallback: string) {

@@ -19,6 +19,7 @@ import com.notvault.backend.store.UserRepository;
 
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 /**
@@ -27,6 +28,9 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class DataSeeder implements ApplicationRunner {
+
+    @Value("${notevault.demo.enabled:true}")
+    private boolean demoEnabled;
 
     private final UserRepository users;
     private final ClassRepository classes;
@@ -50,8 +54,12 @@ public class DataSeeder implements ApplicationRunner {
 
     @Override
     public void run(ApplicationArguments args) {
+        if (!demoEnabled) {
+            return;
+        }
         if (users.count() > 0) {
-            return; // database already has data
+            ensureDemoAccounts();
+            return;
         }
 
         Instant now = Instant.now();
@@ -121,6 +129,29 @@ public class DataSeeder implements ApplicationRunner {
         requests.save(pendingMod);
 
         events.audit(admin, "system.seed", "notevault");
+    }
+
+    /** Keeps local demo logins usable even when the database already contains data. */
+    private void ensureDemoAccounts() {
+        Instant now = Instant.now();
+        ensureDemoUser("Nova Admin", "admin@notevault.com", "admin", "NoteVault HQ", 0, false, now);
+        ensureDemoUser("Aisha Khan", "aisha@notevault.com", "moderator", "Northeastern University", 6, true, now);
+        ensureDemoUser("Diego Alvarez", "diego@notevault.com", "moderator", "University of Texas", 2, false, now);
+        ensureDemoUser("Sam Lee", "student@notevault.com", "student", "University of Washington", 0, false, now);
+    }
+
+    private void ensureDemoUser(String name, String email, String role, String university,
+                                int cleanUploads, boolean trusted, Instant now) {
+        User user = users.findByEmailIgnoreCase(email).orElseGet(() ->
+                new User(Ids.next("user"), name, email, null, role, university, now));
+        user.name = name;
+        user.role = role;
+        user.university = university;
+        user.passwordHash = hasher.hash("password123");
+        user.cleanUploadCount = cleanUploads;
+        user.isTrusted = trusted;
+        if (user.createdAt == null) user.createdAt = now;
+        users.save(user);
     }
 
     private Note note(String id, String title, String description, String subject, User uploader,

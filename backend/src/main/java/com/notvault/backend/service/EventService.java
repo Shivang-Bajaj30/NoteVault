@@ -58,7 +58,11 @@ public class EventService {
         KafkaEventPublisher publisher = kafkaPublisher.getIfAvailable();
         if (publisher != null) {
             try {
-                publisher.publish(event);
+                publisher.publish(event).whenComplete((result, error) -> {
+                    if (error != null) {
+                        log.warn("Event {} was saved to MongoDB but could not be sent to Kafka", event.id, error);
+                    }
+                });
             } catch (RuntimeException ex) {
                 log.warn("Event {} was saved to MongoDB but could not be sent to Kafka", event.id, ex);
             }

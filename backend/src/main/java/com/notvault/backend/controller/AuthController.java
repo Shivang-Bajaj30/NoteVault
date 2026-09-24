@@ -69,11 +69,13 @@ public class AuthController {
                 req.university() == null ? "" : req.university().trim(), Instant.now());
         users.save(user);
 
+        // Preserve the causal event order: the account exists before any role request.
+        events.emit("user-events", "user.signup", user.email);
+
         if ("moderator".equalsIgnoreCase(req.role())) {
             verifications.createRequest(user, req.reason());
         }
 
-        events.emit("user-events", "user.signup", user.email);
         return ResponseEntity.status(HttpStatus.CREATED).body(Map.of(
                 "token", jwtService.issue(user),
                 "user", publicUser(user),

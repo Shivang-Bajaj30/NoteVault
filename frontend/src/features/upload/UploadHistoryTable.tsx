@@ -1,18 +1,11 @@
-import { useAllNotesAdmin, useDeleteNote } from '../../api/useNotesApi'
-import { useAuth } from '../../lib/auth'
+import { useMyNotes, useDeleteNote } from '../../api/useNotesApi'
 import { Table, StatusBadge, Button } from '../../components/ui'
 import { Trash2, ExternalLink, FileText } from 'lucide-react'
 import { Link } from 'react-router-dom'
 
 export function UploadHistoryTable() {
-  const { user } = useAuth()
-  const { data: allNotes = [] } = useAllNotesAdmin()
+  const { data: userNotes = [] } = useMyNotes()
   const deleteNote = useDeleteNote()
-
-  // Filter to notes by current user or show recent demo contributions
-  const userNotes = allNotes.filter(
-    (n) => n.uploadedBy === user?.id || n.uploadedByName === user?.name || user?.role === 'admin',
-  )
 
   const columns = [
     {

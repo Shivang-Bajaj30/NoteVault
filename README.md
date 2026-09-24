@@ -38,11 +38,13 @@ npm install
 npm run dev                # http://localhost:5173
 ```
 
-Copy `frontend/.env.example` to `frontend/.env.local` and set `VITE_API_BASE_URL` if the API is not at `http://localhost:8080`.
+Copy `frontend/.env.example` to `frontend/.env.local` and set `VITE_API_BASE_URL` if the API is not at `http://localhost:8080/api`.
 
 ### Kafka event processing (optional)
 
 The application persists every domain event to MongoDB. To mirror these records into Kafka, start a Kafka broker and set `KAFKA_BOOTSTRAP_SERVERS` and `NOTEVAULT_KAFKA_ENABLED=true` for the backend. Start the streams service with the same broker address and `NOTEVAULT_STREAMS_ENABLED=true`. Its topology consumes `notevault.events`, groups by `topic:type`, and writes running counts to `notevault.event-counts`. Create these topics with partitions/retention appropriate to your broker. Set `NOTEVAULT_STREAMS_HEALTH_URL` if the backend cannot reach the streams service at `http://localhost:8081`. Without a broker, the MongoDB mirror remains available; consumer lag is shown as unavailable until a metrics source is configured.
+
+For local development, copy `backend/.env.example` to `backend/.env`, `frontend/.env.example` to `frontend/.env.local`, and `streams/.env.example` to `streams/.env`. Both Java services load their own `.env` file automatically when launched from their module directory; shell environment variables still take precedence.
 
 ### Demo accounts (password: `password123`)
 

@@ -16,7 +16,7 @@ export function useCreateReport() {
   const queryClient = useQueryClient()
 
   return useMutation({
-    mutationFn: async ({ noteId, reason, noteTitle, reportedByName }: { noteId: string; reason: string; noteTitle?: string; reportedByName?: string }) => {
+    mutationFn: async ({ noteId, reason }: { noteId: string; reason: string; noteTitle?: string; reportedByName?: string }) => {
       const res = await api.post<{ report: Report }>('/reports', { noteId, reason })
       return res.data.report
     },

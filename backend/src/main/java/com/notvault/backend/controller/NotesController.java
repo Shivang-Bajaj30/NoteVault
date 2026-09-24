@@ -57,6 +57,18 @@ public class NotesController {
         return Map.of("notes", notes.catalog(q, null, null));
     }
 
+    @GetMapping("/notes/{id}")
+    public Map<String, Object> getNote(HttpServletRequest request, @PathVariable String id) {
+        Note note = notes.requireLiveNote(id);
+        if (!"approved".equals(note.status)) {
+            User user = auth.optional(request);
+            if (user == null || (!user.id.equals(note.uploadedBy) && !"admin".equals(user.role))) {
+                throw new org.springframework.web.server.ResponseStatusException(HttpStatus.NOT_FOUND, "Note not found");
+            }
+        }
+        return Map.of("note", note);
+    }
+
     @GetMapping("/notes/mine")
     public Map<String, Object> myNotes(HttpServletRequest request) {
         User user = auth.requireRole(request, "moderator", "admin");
@@ -116,6 +128,11 @@ public class NotesController {
     public Map<String, Object> review(HttpServletRequest request, @PathVariable String id,
             @RequestBody ReviewRequest req) {
         User admin = auth.requireRole(request, "admin");
+        if (req == null || req.decision() == null
+                || (!"approve".equalsIgnoreCase(req.decision()) && !"reject".equalsIgnoreCase(req.decision()))) {
+            throw new org.springframework.web.server.ResponseStatusException(
+                    HttpStatus.BAD_REQUEST, "Decision must be approve or reject");
+        }
         Note note = notes.review(admin, id, "approve".equalsIgnoreCase(req.decision()));
         return Map.of("note", note);
     }

@@ -135,10 +135,9 @@ function readStoredUser(): User | null {
   try {
     const raw = localStorage.getItem('notevault_user')
     if (raw) return JSON.parse(raw) as User
-    // Default to student persona for demo convenience if no user
-    return DEMO_USERS.student
+    return isDemoMode ? DEMO_USERS.student : null
   } catch {
-    return DEMO_USERS.student
+    return isDemoMode ? DEMO_USERS.student : null
   }
 }
 

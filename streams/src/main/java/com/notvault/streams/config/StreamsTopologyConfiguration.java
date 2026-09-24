@@ -10,6 +10,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.kafka.annotation.EnableKafkaStreams;
+import com.notvault.streams.service.StreamProcessingMonitor;
 
 /** Counts each keyed domain event and publishes the running totals for downstream consumers. */
 @Configuration
@@ -17,10 +18,13 @@ import org.springframework.kafka.annotation.EnableKafkaStreams;
 @ConditionalOnProperty(prefix = "notevault.streams", name = "enabled", havingValue = "true")
 public class StreamsTopologyConfiguration {
     @Bean
-    KStream<String, String> eventCountTopology(StreamsBuilder builder) {
+    KStream<String, String> eventCountTopology(StreamsBuilder builder, StreamProcessingMonitor monitor) {
         KStream<String, String> events = builder.stream("notevault.events",
                 Consumed.with(Serdes.String(), Serdes.String()));
-        events.mapValues(ignored -> 1L)
+        KStream<String, String> validEvents = events
+                .filter((key, value) -> key != null && !key.isBlank() && value != null)
+                .peek((key, value) -> monitor.recordProcessed());
+        validEvents.mapValues(ignored -> 1L)
                 .groupByKey(Grouped.with(Serdes.String(), Serdes.Long()))
                 .count()
                 .toStream()

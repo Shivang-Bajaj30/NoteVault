@@ -23,13 +23,23 @@ export function useAllNotesAdmin() {
   })
 }
 
+export function useMyNotes() {
+  return useQuery({
+    queryKey: ['notes', 'mine'],
+    queryFn: async () => {
+      const res = await api.get<{ notes: Note[] }>('/notes/mine')
+      return res.data.notes
+    },
+  })
+}
+
 export function useNote(id?: string) {
   return useQuery({
     queryKey: ['note', id],
     enabled: !!id,
     queryFn: async () => {
-      const res = await api.get<{ notes: Note[] }>('/notes', { params: { q: id } })
-      return res.data.notes?.find((note) => note.id === id) ?? null
+      const res = await api.get<{ note: Note }>(`/notes/${id}`)
+      return res.data.note
     },
   })
 }
@@ -59,9 +69,7 @@ export function useUploadNote() {
       if (payload.classId) formData.append('classId', payload.classId)
       payload.tags.forEach((tag) => formData.append('tags', tag))
       formData.append('file', payload.file)
-      const res = await api.post<{ note: Note; autoPublished: boolean }>('/notes', formData, {
-        headers: { 'Content-Type': 'multipart/form-data' },
-      })
+      const res = await api.post<{ note: Note; autoPublished: boolean }>('/notes', formData)
       return { note: res.data.note, autoPublished: res.data.autoPublished }
     },
     onSuccess: () => {

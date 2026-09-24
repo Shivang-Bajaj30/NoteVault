@@ -6,6 +6,8 @@ import com.notvault.backend.model.StreamEvent;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Component;
+import java.util.concurrent.CompletableFuture;
+import org.springframework.kafka.support.SendResult;
 
 /** Publishes the durable event mirror to Kafka when the broker is configured. */
 @Component
@@ -19,9 +21,10 @@ public class KafkaEventPublisher {
         this.mapper = mapper;
     }
 
-    public void publish(StreamEvent event) {
+    public CompletableFuture<SendResult<String, String>> publish(StreamEvent event) {
         try {
-            kafka.send("notevault.events", event.topic + ":" + event.type, mapper.writeValueAsString(event));
+            return kafka.send("notevault.events", event.topic + ":" + event.type,
+                    mapper.writeValueAsString(event));
         } catch (JsonProcessingException ex) {
             throw new IllegalStateException("Could not serialize stream event " + event.id, ex);
         }

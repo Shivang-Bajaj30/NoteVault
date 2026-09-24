@@ -31,6 +31,7 @@ public class NoteFileStorage {
     }
 
     public StoredFile load(String id) {
+        if (id == null || !ObjectId.isValid(id)) return null;
         GridFSFile file = gridFs.findOne(Query.query(Criteria.where("_id").is(new ObjectId(id))));
         if (file == null) return null;
         GridFsResource resource = gridFs.getResource(file);
