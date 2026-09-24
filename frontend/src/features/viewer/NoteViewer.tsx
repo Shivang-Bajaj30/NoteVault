@@ -100,7 +100,7 @@ export function NoteViewer({ note }: NoteViewerProps) {
           <Card className="overflow-hidden bg-slate-50">
             <div className="flex items-center justify-between px-4 py-2.5 bg-white border-b border-slate-200 text-xs">
               <div className="flex items-center gap-2 truncate pr-2">
-                <FileText className="w-4 h-4 text-indigo-600 shrink-0" />
+                <FileText className="w-4 h-4 text-brand-600 shrink-0" />
                 <span className="font-semibold text-slate-800 truncate">
                   {note.fileName || `${note.title}.pdf`}
                 </span>
@@ -112,7 +112,7 @@ export function NoteViewer({ note }: NoteViewerProps) {
             </div>
 
             <div className="min-h-[360px] p-8 flex flex-col items-center justify-center text-center">
-              <FileText className="w-10 h-10 text-indigo-500 mb-4" />
+              <FileText className="w-10 h-10 text-brand-500 mb-4" />
               <h2 className="text-lg font-semibold text-slate-900">Original study document</h2>
               <p className="max-w-md mt-2 text-sm text-slate-500">{note.description}</p>
               <p className="mt-4 text-xs text-slate-400">Download the original file to view its pages.</p>
@@ -132,7 +132,7 @@ export function NoteViewer({ note }: NoteViewerProps) {
             </h4>
 
             <div className="flex items-center gap-3 pb-3 mb-3 border-b border-stone-100 dark:border-zinc-800">
-              <div className="w-10 h-10 rounded-full bg-indigo-100 dark:bg-indigo-950/80 flex items-center justify-center font-bold text-indigo-700 dark:text-indigo-300 text-sm">
+              <div className="w-10 h-10 rounded-full bg-brand-100 dark:bg-brand-950/80 flex items-center justify-center font-bold text-brand-700 dark:text-brand-300 text-sm">
                 {(note.uploadedByName || 'U')[0]}
               </div>
               <div className="min-w-0 flex-1">

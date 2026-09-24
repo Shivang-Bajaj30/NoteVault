@@ -23,7 +23,7 @@ import { DemoPersonaBar } from '../features/auth/DemoPersonaBar'
 export function Logo() {
   return (
     <Link className="flex items-center gap-2.5 font-bold tracking-tight text-base select-none group" to="/">
-      <span className="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center shadow-sm group-hover:bg-indigo-700 transition-colors">
+      <span className="w-8 h-8 rounded-lg bg-brand-600 text-white flex items-center justify-center shadow-sm group-hover:bg-brand-700 transition-colors">
         <BookOpen className="w-4 h-4" />
       </span>
       <span className="text-base font-bold tracking-tight text-slate-900 font-heading">
@@ -63,7 +63,7 @@ export default function AppLayout() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col bg-[#f7f8fb] text-slate-900 relative overflow-x-hidden selection:bg-indigo-100 selection:text-indigo-800">
+    <div className="min-h-screen flex flex-col bg-[#f7f8fb] text-slate-900 relative overflow-x-hidden selection:bg-brand-100 selection:text-brand-800">
       <DemoPersonaBar />
       {backendHealth.isError && <div role="status" className="px-4 py-2 bg-rose-50 border-b border-rose-200 text-rose-800 text-xs flex items-center justify-between gap-3">
         <span>The backend is unreachable. Live data and write actions are unavailable until the API reconnects.</span>
@@ -91,7 +91,7 @@ export default function AppLayout() {
               placeholder="Search notes, courses, or concepts..."
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full pl-9 pr-8 py-2 text-sm bg-slate-50 border border-slate-200 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-400 focus:bg-white transition-all"
+              className="w-full pl-9 pr-8 py-2 text-sm bg-slate-50 border border-slate-200 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500/30 focus:border-brand-400 focus:bg-white transition-all"
             />
           </div>
         </form>
@@ -135,7 +135,7 @@ export default function AppLayout() {
         >
           <div className="space-y-4">
             <div className="px-3 py-2.5 rounded-lg bg-slate-50 border border-slate-200 text-xs">
-              <span className="text-[10px] uppercase tracking-wider font-semibold text-indigo-600 flex items-center gap-1.5">
+              <span className="text-[10px] uppercase tracking-wider font-semibold text-brand-600 flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
                 Campus workspace
               </span>
@@ -153,7 +153,7 @@ export default function AppLayout() {
                   className={({ isActive }) =>
                     `flex items-center justify-between px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                       isActive
-                        ? 'bg-indigo-50 text-indigo-700'
+                        ? 'bg-brand-50 text-brand-700'
                         : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
                     }`
                   }
@@ -256,7 +256,7 @@ export default function AppLayout() {
               <p className="text-sm font-bold text-slate-900">{user?.name}</p>
               <p className="text-slate-500">{user?.email}</p>
               <div className="flex items-center gap-2 mt-1">
-                <span className="px-2 py-0.5 rounded text-[10px] font-medium uppercase bg-indigo-50 text-indigo-700 border border-indigo-100">
+                <span className="px-2 py-0.5 rounded text-[10px] font-medium uppercase bg-brand-50 text-brand-700 border border-brand-100">
                   {user?.role}
                 </span>
                 <span className="text-slate-500 text-[11px]">{user?.university}</span>

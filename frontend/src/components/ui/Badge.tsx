@@ -27,11 +27,11 @@ export function Badge({
     danger:
       'bg-rose-50/90 text-rose-800 dark:bg-rose-950/50 dark:text-rose-300 border-rose-300/80 dark:border-rose-800/70 shadow-2xs shadow-rose-500/10 font-semibold',
     accent:
-      'bg-indigo-50/90 text-indigo-800 dark:bg-indigo-950/50 dark:text-indigo-300 border-indigo-300/80 dark:border-indigo-800/70 shadow-2xs shadow-indigo-500/10 font-semibold',
+      'bg-brand-50/90 text-brand-800 dark:bg-brand-950/50 dark:text-brand-300 border-brand-300/80 dark:border-brand-800/70 shadow-2xs shadow-brand-500/10 font-semibold',
     academic:
       'bg-gradient-to-r from-amber-100/90 via-orange-50/80 to-amber-100/70 text-amber-950 dark:bg-zinc-800 dark:text-amber-200 border-amber-300/90 dark:border-stone-700 shadow-2xs font-semibold',
     stream:
-      'bg-purple-50/90 text-purple-800 dark:bg-purple-950/50 dark:text-purple-300 border-purple-300/80 dark:border-purple-800/70 shadow-2xs shadow-purple-500/10 font-semibold',
+      'bg-amber-50/90 text-amber-800 dark:bg-amber-950/50 dark:text-amber-300 border-amber-300/80 dark:border-amber-800/70 shadow-2xs shadow-amber-500/10 font-semibold',
   }
 
   const sizes = {
@@ -125,7 +125,7 @@ export function KafkaTopicBadge({ topic }: { topic: string }) {
     <Badge
       tone="stream"
       className="font-mono text-[10px] tracking-tight uppercase"
-      icon={<Radio className="w-3 h-3 text-purple-600 dark:text-purple-400 animate-pulse" />}
+      icon={<Radio className="w-3 h-3 text-amber-600 dark:text-amber-400 animate-pulse" />}
     >
       {topic}
     </Badge>

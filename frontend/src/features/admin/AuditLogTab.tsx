@@ -20,7 +20,7 @@ export function AuditLogTab() {
       label: 'Authorized Actor',
       render: (val: string) => (
         <div className="flex items-center gap-1.5 text-xs font-semibold text-stone-800 dark:text-zinc-200">
-          <User className="w-3.5 h-3.5 text-indigo-600 dark:text-indigo-400" />
+          <User className="w-3.5 h-3.5 text-brand-600 dark:text-brand-400" />
           <span>{val}</span>
         </div>
       ),
@@ -59,10 +59,10 @@ export function AuditLogTab() {
       <div className="flex items-center justify-between">
         <div>
           <h3 className="text-base font-bold text-stone-900 dark:text-zinc-100 flex items-center gap-2">
-            <History className="w-4 h-4 text-indigo-600 dark:text-indigo-400" />
+            <History className="w-4 h-4 text-brand-600 dark:text-brand-400" />
             <span>Immutable Moderation Audit Log</span>
           </h3>
-          <p className="text-xs font-semibold text-indigo-600 dark:text-indigo-400 mt-0.5">
+          <p className="text-xs font-semibold text-brand-600 dark:text-brand-400 mt-0.5">
             Cryptographically timestamped record of note approvals, report resolutions, and moderator verifications.
           </p>
         </div>

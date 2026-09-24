@@ -27,7 +27,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           ref={ref}
           className={twMerge(
             clsx(
-              'w-full rounded-xl border border-slate-200/90 bg-white/95 px-3.5 py-2 text-xs text-slate-900 placeholder-slate-400 transition-all focus:border-indigo-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20 disabled:cursor-not-allowed disabled:bg-slate-50 disabled:text-slate-400 dark:border-white/10 dark:bg-obsidian-850 dark:text-slate-100 dark:placeholder-zinc-500 dark:focus:border-indigo-400 dark:focus:ring-indigo-400/20 shadow-2xs',
+              'w-full rounded-xl border border-slate-200/90 bg-white/95 px-3.5 py-2 text-xs text-slate-900 placeholder-slate-400 transition-all focus:border-brand-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-500/20 disabled:cursor-not-allowed disabled:bg-slate-50 disabled:text-slate-400 dark:border-white/10 dark:bg-obsidian-850 dark:text-slate-100 dark:placeholder-zinc-500 dark:focus:border-brand-400 dark:focus:ring-brand-400/20 shadow-2xs',
               error && 'border-rose-500 focus:border-rose-500 focus:ring-rose-500/20 dark:border-rose-500',
               className,
             ),
@@ -35,7 +35,7 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
           {...props}
         />
         {helperText && !error && (
-          <span className="text-[11px] font-medium text-indigo-600 dark:text-indigo-400">{helperText}</span>
+          <span className="text-[11px] font-medium text-brand-600 dark:text-brand-400">{helperText}</span>
         )}
         {error && <span className="text-[11px] font-semibold text-rose-600 dark:text-rose-400">{error}</span>}
       </div>
@@ -70,7 +70,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           rows={rows}
           className={twMerge(
             clsx(
-              'w-full rounded-xl border border-slate-200/90 bg-white/95 px-3.5 py-2 text-xs text-slate-900 placeholder-slate-400 transition-all focus:border-indigo-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500/20 disabled:cursor-not-allowed disabled:bg-slate-50 disabled:text-slate-400 dark:border-white/10 dark:bg-obsidian-850 dark:text-slate-100 dark:placeholder-zinc-500 dark:focus:border-indigo-400 dark:focus:ring-indigo-400/20 shadow-2xs',
+              'w-full rounded-xl border border-slate-200/90 bg-white/95 px-3.5 py-2 text-xs text-slate-900 placeholder-slate-400 transition-all focus:border-brand-500 focus:bg-white focus:outline-none focus:ring-2 focus:ring-brand-500/20 disabled:cursor-not-allowed disabled:bg-slate-50 disabled:text-slate-400 dark:border-white/10 dark:bg-obsidian-850 dark:text-slate-100 dark:placeholder-zinc-500 dark:focus:border-brand-400 dark:focus:ring-brand-400/20 shadow-2xs',
               error && 'border-rose-500 focus:border-rose-500 focus:ring-rose-500/20 dark:border-rose-500',
               className,
             ),
@@ -78,7 +78,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
           {...props}
         />
         {helperText && !error && (
-          <span className="text-[11px] font-medium text-indigo-600 dark:text-indigo-400">{helperText}</span>
+          <span className="text-[11px] font-medium text-brand-600 dark:text-brand-400">{helperText}</span>
         )}
         {error && <span className="text-[11px] font-semibold text-rose-600 dark:text-rose-400">{error}</span>}
       </div>

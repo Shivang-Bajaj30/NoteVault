@@ -9,14 +9,14 @@
     --font-heading: 'Outfit', sans-serif;
     --font-mono: 'JetBrains Mono', monospace;
 
-    --bg-page: #f7f8fb;
+    --bg-page: #f8fafc;
     --bg-card: #ffffff;
-    --bg-card-subtle: #f1f4f9;
+    --bg-card-subtle: #f1f5f9;
     --text-main: #0f172a;
     --text-muted: #64748b;
     --border-subtle: #e2e8f0;
     --border-glass: rgba(255, 255, 255, 0.8);
-    --accent-glow: rgba(79, 70, 229, 0.1);
+    --accent-glow: rgba(16, 185, 129, 0.1);
   }
 
   * {
@@ -69,26 +69,26 @@
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #818cf8;
+  background: #34d399;
 }
 
 .bg-grid-pattern {
   background-size: 40px 40px;
   background-image:
-    linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
+    linear-gradient(to right, rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
 }
 
 .bg-dot-pattern {
   background-size: 22px 22px;
-  background-image: radial-gradient(circle, rgba(79, 70, 229, 0.14) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(16, 185, 129, 0.15) 1px, transparent 1px);
 }
 
 .glass-panel {
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid #e2e8f0;
+  border: 1px solid rgba(226, 232, 240, 0.8);
 }
 
 .glass-card {
@@ -99,13 +99,13 @@
 }
 
 .glass-card:hover {
-  transform: translateY(-1px);
-  border-color: #c7d2fe;
-  box-shadow: 0 10px 30px -12px rgba(79, 70, 229, 0.18);
+  transform: translateY(-2px);
+  border-color: #a7f3d0;
+  box-shadow: 0 10px 30px -12px rgba(16, 185, 129, 0.2);
 }
 
 .ambient-glow {
-  background: radial-gradient(circle at 50% 0%, rgba(79, 70, 229, 0.08), transparent 62%);
+  background: radial-gradient(circle at 50% 0%, rgba(16, 185, 129, 0.08), transparent 62%);
 }
 
 @keyframes shimmer {
@@ -117,7 +117,7 @@
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0) 0%,
-    rgba(99, 102, 241, 0.08) 50%,
+    rgba(16, 185, 129, 0.08) 50%,
     rgba(255, 255, 255, 0) 100%
   );
   background-size: 200% 100%;

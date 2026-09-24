@@ -15,7 +15,7 @@ export default function AuthPage({ signup = false }: { signup?: boolean }) {
         </Link>
 
         <div className="flex items-center gap-1.5 font-bold text-sm text-slate-900">
-          <span className="w-6 h-6 rounded-md bg-indigo-600 text-white flex items-center justify-center">
+          <span className="w-6 h-6 rounded-md bg-brand-600 text-white flex items-center justify-center">
             <BookOpen className="w-3.5 h-3.5" />
           </span>
           <span>NoteVault</span>

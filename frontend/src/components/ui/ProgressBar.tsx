@@ -3,7 +3,7 @@ import { twMerge } from 'tailwind-merge'
 export interface ProgressBarProps {
   value: number // 0 to 100 or current count
   max?: number // default 100 or threshold like 5
-  tone?: 'indigo' | 'emerald' | 'amber' | 'rose'
+  tone?: 'brand' | 'emerald' | 'amber' | 'rose'
   size?: 'sm' | 'md' | 'lg'
   showLabel?: boolean
   label?: string
@@ -13,7 +13,7 @@ export interface ProgressBarProps {
 export function ProgressBar({
   value,
   max = 100,
-  tone = 'indigo',
+  tone = 'brand',
   size = 'md',
   showLabel = false,
   label,
@@ -22,7 +22,7 @@ export function ProgressBar({
   const percentage = Math.min(100, Math.max(0, (value / max) * 100))
 
   const tones = {
-    indigo: 'bg-gradient-to-r from-indigo-500 via-indigo-600 to-purple-600 shadow-xs shadow-indigo-500/30',
+    brand: 'bg-gradient-to-r from-brand-500 via-brand-600 to-amber-600 shadow-xs shadow-brand-500/30',
     emerald: 'bg-gradient-to-r from-emerald-500 via-emerald-600 to-teal-500 shadow-xs shadow-emerald-500/30',
     amber: 'bg-gradient-to-r from-amber-400 via-amber-500 to-orange-500 shadow-xs shadow-amber-500/30',
     rose: 'bg-gradient-to-r from-rose-500 via-rose-600 to-pink-500 shadow-xs shadow-rose-500/30',

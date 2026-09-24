@@ -29,13 +29,13 @@ export default function LandingPage() {
   return (
     <div className="min-h-screen bg-white text-slate-900 flex flex-col relative overflow-hidden">
       <div className="fixed inset-0 pointer-events-none -z-10 overflow-hidden" aria-hidden="true">
-        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[480px] rounded-full bg-indigo-50/80 blur-3xl" />
+        <div className="absolute -top-40 left-1/2 -translate-x-1/2 w-[900px] h-[480px] rounded-full bg-brand-50/80 blur-3xl" />
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#f1f5f9_1px,transparent_1px),linear-gradient(to_bottom,#f1f5f9_1px,transparent_1px)] bg-[size:40px_40px] opacity-70" />
       </div>
 
       <header className="h-16 border-b border-slate-200 bg-white/95 backdrop-blur-md px-6 lg:px-16 flex items-center justify-between sticky top-0 z-30">
         <Link to="/" className="flex items-center gap-2.5 group select-none">
-          <span className="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center shadow-sm group-hover:bg-indigo-700 transition-colors">
+          <span className="w-8 h-8 rounded-lg bg-brand-600 text-white flex items-center justify-center shadow-sm group-hover:bg-brand-700 transition-colors">
             <BookOpen className="w-4 h-4" />
           </span>
           <span className="font-heading font-bold text-lg tracking-tight text-slate-900">NoteVault</span>
@@ -53,7 +53,7 @@ export default function LandingPage() {
           </Link>
           <Link
             to="/signup"
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-sm font-semibold shadow-sm transition-all"
+            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-brand-600 hover:bg-brand-700 text-white text-sm font-semibold shadow-sm transition-all"
           >
             Get started <ArrowRight className="w-3.5 h-3.5" />
           </Link>
@@ -79,7 +79,7 @@ export default function LandingPage() {
           <div className="flex flex-wrap items-center gap-3">
             <Link
               to="/signup"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white font-semibold text-sm shadow-sm transition-all"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg bg-brand-600 hover:bg-brand-700 text-white font-semibold text-sm shadow-sm transition-all"
             >
               Start studying
               <ArrowRight className="w-4 h-4" />
@@ -99,7 +99,7 @@ export default function LandingPage() {
             <div className="flex flex-wrap gap-2">
               <button type="button" onClick={() => launchAs('student', '/home')}
                 className="px-3 py-1.5 rounded-md border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 text-xs font-medium flex items-center gap-1.5">
-                <GraduationCap className="w-3.5 h-3.5 text-indigo-500" />
+                <GraduationCap className="w-3.5 h-3.5 text-brand-500" />
                 Student
               </button>
               <button type="button" onClick={() => launchAs('diego', '/upload')}
@@ -136,7 +136,7 @@ export default function LandingPage() {
 
             <div className="p-6 space-y-4">
               <div>
-                <span className="text-[10px] font-bold tracking-widest text-indigo-600 uppercase">
+                <span className="text-[10px] font-bold tracking-widest text-brand-600 uppercase">
                   CS 201 · Data Structures
                 </span>
                 <h3 className="text-base font-bold text-slate-900 mt-1 font-heading leading-snug">
@@ -147,9 +147,9 @@ export default function LandingPage() {
                 </p>
               </div>
 
-              <div className="p-4 rounded-lg bg-indigo-50/70 border border-indigo-100">
+              <div className="p-4 rounded-lg bg-brand-50/70 border border-brand-100">
                 <div className="flex items-center gap-2 text-xs font-semibold text-slate-800 mb-2">
-                  <Sparkles className="w-3.5 h-3.5 text-indigo-600" />
+                  <Sparkles className="w-3.5 h-3.5 text-brand-600" />
                   Key concepts
                 </div>
                 <p className="text-[11px] text-slate-600 leading-relaxed">
@@ -159,7 +159,7 @@ export default function LandingPage() {
 
               <div className="flex items-center justify-between pt-1 text-xs">
                 <span className="text-slate-400 text-[11px]">342 downloads · 28 pages</span>
-                <Link to="/notes/1" className="inline-flex items-center gap-1 font-semibold text-indigo-600 hover:text-indigo-700">
+                <Link to="/notes/1" className="inline-flex items-center gap-1 font-semibold text-brand-600 hover:text-brand-700">
                   Open viewer <ArrowRight className="w-3.5 h-3.5" />
                 </Link>
               </div>
@@ -177,7 +177,7 @@ export default function LandingPage() {
             { value: '24/7', label: 'Access to reviewed notes' },
           ].map(({ value, label }) => (
             <div key={label} className="space-y-1">
-              <span className="text-2xl lg:text-3xl font-extrabold font-heading block text-indigo-700">{value}</span>
+              <span className="text-2xl lg:text-3xl font-extrabold font-heading block text-brand-700">{value}</span>
               <span className="text-xs font-medium text-slate-500">{label}</span>
             </div>
           ))}
@@ -187,7 +187,7 @@ export default function LandingPage() {
       <section id="how-it-works" className="px-6 lg:px-16 py-20 bg-white">
         <div className="max-w-7xl mx-auto space-y-12">
           <div className="text-center max-w-2xl mx-auto space-y-3">
-            <span className="inline-block text-xs font-semibold text-indigo-600 uppercase tracking-widest bg-indigo-50 px-3 py-1 rounded-full">
+            <span className="inline-block text-xs font-semibold text-brand-600 uppercase tracking-widest bg-brand-50 px-3 py-1 rounded-full">
               How NoteVault works
             </span>
             <h2 className="text-3xl font-extrabold font-heading tracking-tight text-slate-900">
@@ -199,9 +199,9 @@ export default function LandingPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-7 rounded-xl border border-slate-200 bg-white hover:border-indigo-200 hover:shadow-md transition-all">
-              <div className="w-11 h-11 rounded-lg bg-indigo-50 border border-indigo-100 flex items-center justify-center mb-5">
-                <Search className="w-5 h-5 text-indigo-600" />
+            <div className="p-7 rounded-xl border border-slate-200 bg-white hover:border-brand-200 hover:shadow-md transition-all">
+              <div className="w-11 h-11 rounded-lg bg-brand-50 border border-brand-100 flex items-center justify-center mb-5">
+                <Search className="w-5 h-5 text-brand-600" />
               </div>
               <h3 className="text-base font-bold text-slate-900 mb-2 font-heading">Study discovery</h3>
               <p className="text-sm text-slate-500 leading-relaxed">
@@ -235,7 +235,7 @@ export default function LandingPage() {
       <footer className="mt-auto border-t border-slate-200 py-8 px-6 lg:px-16 bg-slate-50">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-slate-500">
           <div className="flex items-center gap-2.5 font-semibold text-slate-800">
-            <span className="w-6 h-6 rounded-md bg-indigo-600 text-white flex items-center justify-center">
+            <span className="w-6 h-6 rounded-md bg-brand-600 text-white flex items-center justify-center">
               <BookOpen className="w-3.5 h-3.5" />
             </span>
             NoteVault

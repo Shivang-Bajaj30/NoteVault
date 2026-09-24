@@ -33,7 +33,7 @@ export function AnalyticsTab() {
       value: totals.notes ?? 0,
       sub: `${totals.approved ?? 0} approved & live`,
       icon: Files,
-      tone: 'indigo',
+      tone: 'brand',
     },
     {
       label: 'Registered Students',
@@ -65,10 +65,10 @@ export function AnalyticsTab() {
         {statCards.map((stat, i) => {
           const Icon = stat.icon
           const toneStyles: Record<string, { card: string; icon: string; sub: string }> = {
-            indigo: {
-              card: 'border-indigo-200/90 dark:border-indigo-800/60 bg-gradient-to-br from-indigo-50/70 via-white to-indigo-50/20 dark:from-indigo-950/30 dark:via-zinc-900 dark:to-zinc-900',
-              icon: 'bg-indigo-600 text-white shadow-xs',
-              sub: 'text-indigo-600 dark:text-indigo-400 font-semibold',
+            brand: {
+              card: 'border-brand-200/90 dark:border-brand-800/60 bg-gradient-to-br from-brand-50/70 via-white to-brand-50/20 dark:from-brand-950/30 dark:via-zinc-900 dark:to-zinc-900',
+              icon: 'bg-brand-600 text-white shadow-xs',
+              sub: 'text-brand-600 dark:text-brand-400 font-semibold',
             },
             emerald: {
               card: 'border-emerald-200/90 dark:border-emerald-800/60 bg-gradient-to-br from-emerald-50/70 via-white to-emerald-50/20 dark:from-emerald-950/30 dark:via-zinc-900 dark:to-zinc-900',
@@ -86,7 +86,7 @@ export function AnalyticsTab() {
               sub: 'text-rose-600 dark:text-rose-400 font-semibold',
             },
           }
-          const currentTone = toneStyles[stat.tone] || toneStyles.indigo
+          const currentTone = toneStyles[stat.tone] || toneStyles.brand
 
           return (
             <Card key={i} className={`p-5 shadow-xs ${currentTone.card}`}>
@@ -114,14 +114,14 @@ export function AnalyticsTab() {
       {/* Chart Section */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Uploads by Subject Bar Chart */}
-        <Card className="lg:col-span-2 border-indigo-200/80 dark:border-zinc-800 p-6 shadow-xs">
-          <div className="flex items-center justify-between mb-4 pb-2 border-b border-indigo-100 dark:border-zinc-800">
+        <Card className="lg:col-span-2 border-brand-200/80 dark:border-zinc-800 p-6 shadow-xs">
+          <div className="flex items-center justify-between mb-4 pb-2 border-b border-brand-100 dark:border-zinc-800">
             <div>
               <h4 className="text-base font-bold text-stone-900 dark:text-zinc-100 flex items-center gap-2">
-                <span className="w-2.5 h-2.5 rounded-full bg-indigo-500" />
+                <span className="w-2.5 h-2.5 rounded-full bg-brand-500" />
                 Uploaded Notes by Academic Discipline
               </h4>
-              <p className="text-xs font-semibold text-indigo-600 dark:text-indigo-400 mt-0.5">
+              <p className="text-xs font-semibold text-brand-600 dark:text-brand-400 mt-0.5">
                 Distribution of peer-reviewed study packages across subject faculties.
               </p>
             </div>

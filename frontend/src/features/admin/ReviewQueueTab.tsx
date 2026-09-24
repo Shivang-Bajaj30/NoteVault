@@ -36,7 +36,7 @@ export function ReviewQueueTab() {
       label: 'Note Document',
       render: (val: string, item: any) => (
         <div className="flex items-center gap-2 max-w-sm">
-          <FileText className="w-4 h-4 text-indigo-600 dark:text-indigo-400 shrink-0" />
+          <FileText className="w-4 h-4 text-brand-600 dark:text-brand-400 shrink-0" />
           <div className="min-w-0">
             <Link
               to={`/notes/${item.id}`}

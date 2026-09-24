@@ -13,10 +13,10 @@ export function NoteCard({ note }: NoteCardProps) {
   const isSaved = saved.includes(note.id)
 
   const coverPalette: Record<string, string> = {
-    lavender: 'bg-indigo-50 border-indigo-100 text-indigo-900',
+    lavender: 'bg-brand-50 border-brand-100 text-brand-900',
     peach: 'bg-amber-50 border-amber-100 text-amber-900',
     mint: 'bg-emerald-50 border-emerald-100 text-emerald-900',
-    blue: 'bg-sky-50 border-sky-100 text-sky-900',
+    brand: 'bg-sky-50 border-sky-100 text-sky-900',
     sand: 'bg-slate-50 border-slate-200 text-slate-800',
     rose: 'bg-rose-50 border-rose-100 text-rose-900',
   }
@@ -24,7 +24,7 @@ export function NoteCard({ note }: NoteCardProps) {
   const selectedCover = coverPalette[note.color || 'lavender'] || coverPalette.lavender
 
   return (
-    <div className="group relative flex flex-col rounded-xl border border-slate-200 bg-white overflow-hidden shadow-sm hover:shadow-md hover:border-indigo-200 transition-all duration-200">
+    <div className="group relative flex flex-col rounded-xl border border-slate-200 bg-white overflow-hidden shadow-sm hover:shadow-md hover:border-brand-200 transition-all duration-200">
       <div className={`relative h-32 p-4 border-b flex flex-col justify-between ${selectedCover}`}>
         <div className="flex items-center justify-between z-10">
           <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-md bg-white text-[10px] font-semibold tracking-wider uppercase shadow-sm">
@@ -40,7 +40,7 @@ export function NoteCard({ note }: NoteCardProps) {
             }}
             aria-label={isSaved ? 'Remove from saved' : 'Save note'}
             className={`p-1.5 rounded-full transition-colors ${
-              isSaved ? 'bg-indigo-600 text-white' : 'bg-white hover:bg-slate-50 text-slate-600'
+              isSaved ? 'bg-brand-600 text-white' : 'bg-white hover:bg-slate-50 text-slate-600'
             }`}
           >
             <Bookmark className={`w-3.5 h-3.5 ${isSaved ? 'fill-current' : ''}`} />
@@ -63,7 +63,7 @@ export function NoteCard({ note }: NoteCardProps) {
             {note.status !== 'approved' && <StatusBadge status={note.status} />}
           </div>
 
-          <Link to={`/notes/${note.id}`} className="block group-hover:text-indigo-600 transition-colors">
+          <Link to={`/notes/${note.id}`} className="block group-hover:text-brand-600 transition-colors">
             <h4 className="text-sm font-semibold tracking-tight text-slate-900 line-clamp-2 leading-snug">
               {note.title}
             </h4>
@@ -82,7 +82,7 @@ export function NoteCard({ note }: NoteCardProps) {
 
           <Link
             to={`/notes/${note.id}`}
-            className="inline-flex items-center gap-0.5 text-xs font-medium text-indigo-600 hover:text-indigo-700 shrink-0"
+            className="inline-flex items-center gap-0.5 text-xs font-medium text-brand-600 hover:text-brand-700 shrink-0"
           >
             Open <ArrowUpRight className="w-3.5 h-3.5" />
           </Link>

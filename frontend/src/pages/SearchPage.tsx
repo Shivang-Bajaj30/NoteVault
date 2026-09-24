@@ -39,7 +39,7 @@ export default function SearchPage() {
   return (
     <div className="space-y-8 max-w-5xl mx-auto pb-12">
       <div className="text-center py-4 space-y-3">
-        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-100 text-indigo-700 text-xs font-semibold">
+        <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-50 border border-brand-100 text-brand-700 text-xs font-semibold">
           <Sparkles className="w-3.5 h-3.5" />
           AI concept search
         </div>
@@ -58,7 +58,7 @@ export default function SearchPage() {
           }}
           className="max-w-2xl mx-auto pt-2"
         >
-          <div className="relative flex items-center shadow-sm rounded-xl bg-white border border-slate-200 p-1.5 focus-within:ring-2 focus-within:ring-indigo-500/30 focus-within:border-indigo-400">
+          <div className="relative flex items-center shadow-sm rounded-xl bg-white border border-slate-200 p-1.5 focus-within:ring-2 focus-within:ring-brand-500/30 focus-within:border-brand-400">
             <Search className="w-5 h-5 text-slate-400 ml-3 shrink-0" />
             <input
               type="text"
@@ -86,7 +86,7 @@ export default function SearchPage() {
               key={sample}
               type="button"
               onClick={() => handleSearch(sample)}
-              className="px-2.5 py-1 rounded-full text-[11px] font-medium bg-white border border-slate-200 hover:border-indigo-200 hover:text-indigo-700 text-slate-600"
+              className="px-2.5 py-1 rounded-full text-[11px] font-medium bg-white border border-slate-200 hover:border-brand-200 hover:text-brand-700 text-slate-600"
             >
               {sample}
             </button>
@@ -119,14 +119,14 @@ export default function SearchPage() {
                 <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
                   <div className="space-y-2 flex-1">
                     <div className="flex items-center gap-2">
-                      <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-indigo-50 text-indigo-700">
+                      <span className="px-2 py-0.5 rounded text-[10px] font-bold uppercase bg-brand-50 text-brand-700">
                         {note.classId?.toUpperCase() || note.subject}
                       </span>
                       <span className="text-xs text-slate-500 font-medium">{note.subject}</span>
                     </div>
 
                     <Link to={`/notes/${note.id}`}>
-                      <h3 className="text-base font-bold text-slate-900 leading-snug hover:text-indigo-700">
+                      <h3 className="text-base font-bold text-slate-900 leading-snug hover:text-brand-700">
                         {note.title}
                       </h3>
                     </Link>
@@ -135,7 +135,7 @@ export default function SearchPage() {
 
                     {note.summary && (
                       <div className="p-3 rounded-lg bg-slate-50 border border-slate-100 text-xs text-slate-700">
-                        <div className="flex items-center gap-1 text-[11px] font-semibold text-indigo-600 mb-0.5">
+                        <div className="flex items-center gap-1 text-[11px] font-semibold text-brand-600 mb-0.5">
                           <Sparkles className="w-3 h-3" />
                           AI insight
                         </div>

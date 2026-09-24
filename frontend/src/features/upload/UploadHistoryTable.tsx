@@ -20,11 +20,11 @@ export function UploadHistoryTable() {
       label: 'Document Title',
       render: (val: string, item: any) => (
         <div className="flex items-center gap-2 max-w-xs">
-          <FileText className="w-4 h-4 text-indigo-600 dark:text-indigo-400 shrink-0" />
+          <FileText className="w-4 h-4 text-brand-600 dark:text-brand-400 shrink-0" />
           <div className="min-w-0">
             <Link
               to={`/notes/${item.id}`}
-              className="font-semibold text-stone-900 dark:text-zinc-100 hover:text-indigo-600 dark:hover:text-indigo-400 truncate block text-xs"
+              className="font-semibold text-stone-900 dark:text-zinc-100 hover:text-brand-600 dark:hover:text-brand-400 truncate block text-xs"
             >
               {val}
             </Link>
@@ -94,17 +94,17 @@ export function UploadHistoryTable() {
 
   return (
     <div className="mt-8 space-y-4">
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2 border-b border-purple-100 dark:border-zinc-800">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 pb-2 border-b border-amber-100 dark:border-zinc-800">
         <div>
           <h4 className="text-base font-bold text-stone-900 dark:text-zinc-100 flex items-center gap-2">
-            <span className="w-2.5 h-2.5 rounded-full bg-purple-500" />
+            <span className="w-2.5 h-2.5 rounded-full bg-amber-500" />
             Your Upload History & Trust Audit
           </h4>
-          <p className="text-xs font-semibold text-purple-600 dark:text-purple-400 mt-0.5">
+          <p className="text-xs font-semibold text-amber-600 dark:text-amber-400 mt-0.5">
             Monitor the verification progression and moderation lifecycle of your submitted study materials.
           </p>
         </div>
-        <span className="px-2.5 py-1 rounded-full text-xs font-bold font-mono bg-purple-100 text-purple-800 dark:bg-purple-950/70 dark:text-purple-300 border border-purple-200 dark:border-purple-800 shrink-0 self-start sm:self-auto">
+        <span className="px-2.5 py-1 rounded-full text-xs font-bold font-mono bg-amber-100 text-amber-800 dark:bg-amber-950/70 dark:text-amber-300 border border-amber-200 dark:border-amber-800 shrink-0 self-start sm:self-auto">
           {userNotes.length} upload{userNotes.length === 1 ? '' : 's'} on record
         </span>
       </div>

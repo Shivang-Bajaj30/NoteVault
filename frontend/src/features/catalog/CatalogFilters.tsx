@@ -40,7 +40,7 @@ export function CatalogFilters({
           value={search}
           onChange={(e) => onSearchChange(e.target.value)}
           placeholder="Filter notes by topic, concept, or keyword..."
-          className="w-full pl-9 pr-3 py-2 text-xs bg-white border border-slate-200 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-400"
+          className="w-full pl-9 pr-3 py-2 text-xs bg-white border border-slate-200 rounded-lg text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-400"
         />
       </div>
 
@@ -49,7 +49,7 @@ export function CatalogFilters({
           value={selectedClass}
           onChange={(e) => onClassChange(e.target.value)}
           aria-label="Filter by course"
-          className="px-3 py-2 text-xs bg-white border border-slate-200 rounded-lg text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-400 cursor-pointer"
+          className="px-3 py-2 text-xs bg-white border border-slate-200 rounded-lg text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-400 cursor-pointer"
         >
           <option value="">All Courses</option>
           {classes.map((c) => (
@@ -63,7 +63,7 @@ export function CatalogFilters({
           value={selectedSubject}
           onChange={(e) => onSubjectChange(e.target.value)}
           aria-label="Filter by subject"
-          className="px-3 py-2 text-xs bg-white border border-slate-200 rounded-lg text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-400 cursor-pointer"
+          className="px-3 py-2 text-xs bg-white border border-slate-200 rounded-lg text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-400 cursor-pointer"
         >
           <option value="">All Subjects</option>
           {subjects.map((s) => (
@@ -77,7 +77,7 @@ export function CatalogFilters({
           value={sort}
           onChange={(e) => onSortChange(e.target.value)}
           aria-label="Sort order"
-          className="px-3 py-2 text-xs bg-white border border-slate-200 rounded-lg text-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-400 cursor-pointer"
+          className="px-3 py-2 text-xs bg-white border border-slate-200 rounded-lg text-slate-800 focus:outline-none focus:ring-2 focus:ring-brand-500/20 focus:border-brand-400 cursor-pointer"
         >
           <option value="popular">Most Popular</option>
           <option value="recent">Most Recent</option>
@@ -90,7 +90,7 @@ export function CatalogFilters({
             onClick={() => onViewChange('grid')}
             aria-label="Grid view"
             className={`p-1.5 rounded-md transition-colors ${
-              view === 'grid' ? 'bg-white text-indigo-600 shadow-sm' : 'text-slate-400 hover:text-slate-700'
+              view === 'grid' ? 'bg-white text-brand-600 shadow-sm' : 'text-slate-400 hover:text-slate-700'
             }`}
           >
             <LayoutGrid className="w-3.5 h-3.5" />
@@ -100,7 +100,7 @@ export function CatalogFilters({
             onClick={() => onViewChange('list')}
             aria-label="List view"
             className={`p-1.5 rounded-md transition-colors ${
-              view === 'list' ? 'bg-white text-indigo-600 shadow-sm' : 'text-slate-400 hover:text-slate-700'
+              view === 'list' ? 'bg-white text-brand-600 shadow-sm' : 'text-slate-400 hover:text-slate-700'
             }`}
           >
             <List className="w-3.5 h-3.5" />

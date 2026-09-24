@@ -88,8 +88,8 @@ export function AdminConsole({ initialTab = 'queue' }: AdminConsoleProps) {
             Kafka Streams Observability
           </TabsTrigger>
 
-          <TabsTrigger value="audit" className="flex items-center gap-1.5 text-xs data-[state=active]:bg-indigo-50 data-[state=active]:text-indigo-800 data-[state=active]:border-indigo-300 dark:data-[state=active]:bg-indigo-950/50 dark:data-[state=active]:text-indigo-300">
-            <History className="w-3.5 h-3.5 text-indigo-500" />
+          <TabsTrigger value="audit" className="flex items-center gap-1.5 text-xs data-[state=active]:bg-brand-50 data-[state=active]:text-brand-800 data-[state=active]:border-brand-300 dark:data-[state=active]:bg-brand-950/50 dark:data-[state=active]:text-brand-300">
+            <History className="w-3.5 h-3.5 text-brand-500" />
             Audit Log
           </TabsTrigger>
         </TabsList>

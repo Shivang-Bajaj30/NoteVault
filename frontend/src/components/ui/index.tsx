@@ -28,7 +28,7 @@ export function Avatar({ name, size = 'md' }: { name: string; size?: 'sm' | 'md'
 
   return (
     <span
-      className={`inline-flex items-center justify-center rounded-full font-semibold bg-indigo-50 text-indigo-800 select-none border border-indigo-100 ${sizes[size]}`}
+      className={`inline-flex items-center justify-center rounded-full font-semibold bg-brand-50 text-brand-800 select-none border border-brand-100 ${sizes[size]}`}
       aria-label={name}
     >
       {initials}

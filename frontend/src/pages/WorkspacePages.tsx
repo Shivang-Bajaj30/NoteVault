@@ -37,7 +37,7 @@ export function DashboardPage() {
       {/* Welcome Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-4 border-b border-slate-200">
         <div>
-          <span className="text-[10px] font-semibold uppercase tracking-wider text-indigo-600">
+          <span className="text-[10px] font-semibold uppercase tracking-wider text-brand-600">
             Study workspace
           </span>
           <h1 className="text-2xl font-bold tracking-tight text-slate-900 mt-0.5">
@@ -52,7 +52,7 @@ export function DashboardPage() {
           {isModerator ? (
             <Link
               to="/upload"
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold shadow-xs transition-colors"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-brand-600 hover:bg-brand-700 text-white text-xs font-semibold shadow-xs transition-colors"
             >
               <Upload className="w-3.5 h-3.5" />
               Upload Course Notes
@@ -60,7 +60,7 @@ export function DashboardPage() {
           ) : (
             <Link
               to="/notes"
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-indigo-600 hover:bg-indigo-700 text-white text-xs font-semibold shadow-xs transition-colors"
+              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-brand-600 hover:bg-brand-700 text-white text-xs font-semibold shadow-xs transition-colors"
             >
               <BookOpen className="w-3.5 h-3.5" />
               Explore All Notes
@@ -72,7 +72,7 @@ export function DashboardPage() {
       {/* Stats Row */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
         <Card className="p-4 flex items-center gap-3">
-          <div className="w-10 h-10 rounded-lg bg-indigo-50 text-indigo-600 flex items-center justify-center shrink-0">
+          <div className="w-10 h-10 rounded-lg bg-brand-50 text-brand-600 flex items-center justify-center shrink-0">
             <Files className="w-5 h-5" />
           </div>
           <div>
@@ -108,9 +108,9 @@ export function DashboardPage() {
       </div>
 
       {/* Search and discovery banner */}
-      <div className="p-6 rounded-xl border border-indigo-100 bg-indigo-50/60 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+      <div className="p-6 rounded-xl border border-brand-100 bg-brand-50/60 flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
         <div className="max-w-xl space-y-2">
-          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white border border-indigo-100 text-[11px] font-semibold tracking-wide text-indigo-700">
+          <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white border border-brand-100 text-[11px] font-semibold tracking-wide text-brand-700">
             <Sparkles className="w-3.5 h-3.5" />
             Search the study library
           </div>
@@ -123,7 +123,7 @@ export function DashboardPage() {
           <div className="pt-2">
             <Link
               to="/search"
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-indigo-600 text-white font-semibold text-xs hover:bg-indigo-700 shadow-sm"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-brand-600 text-white font-semibold text-xs hover:bg-brand-700 shadow-sm"
             >
               Search notes <ArrowRight className="w-3.5 h-3.5" />
             </Link>
@@ -153,7 +153,7 @@ export function DashboardPage() {
             </div>
             <Link
               to="/notes"
-              className="text-xs font-semibold text-indigo-600 hover:underline inline-flex items-center gap-1"
+              className="text-xs font-semibold text-brand-600 hover:underline inline-flex items-center gap-1"
             >
               View All <ArrowUpRight className="w-3.5 h-3.5" />
             </Link>
@@ -166,7 +166,7 @@ export function DashboardPage() {
               onClick={() => setSelectedClass('')}
               className={`px-3 py-1 rounded-full text-xs font-medium transition-colors ${
                 !selectedClass
-                  ? 'bg-indigo-600 text-white'
+                  ? 'bg-brand-600 text-white'
                   : 'bg-white text-slate-600 hover:bg-slate-50 border border-slate-200'
               }`}
             >
@@ -179,7 +179,7 @@ export function DashboardPage() {
                 onClick={() => setSelectedClass(c.id)}
                 className={`px-3 py-1 rounded-full text-xs font-medium whitespace-nowrap transition-colors ${
                   selectedClass === c.id
-                    ? 'bg-indigo-600 text-white'
+                    ? 'bg-brand-600 text-white'
                     : 'bg-white text-slate-600 hover:bg-slate-50 border border-slate-200'
                 }`}
               >
@@ -224,7 +224,7 @@ export function DashboardPage() {
 
             <div className="space-y-3.5 text-xs">
               <div className="flex items-start gap-2.5">
-                <div className="w-7 h-7 rounded-full bg-indigo-50 flex items-center justify-center font-bold text-[10px] text-indigo-700 shrink-0 mt-0.5">
+                <div className="w-7 h-7 rounded-full bg-brand-50 flex items-center justify-center font-bold text-[10px] text-brand-700 shrink-0 mt-0.5">
                   AC
                 </div>
                 <div>
@@ -303,7 +303,7 @@ export function BrowsePage({ savedOnly = false }: { savedOnly?: boolean }) {
       {/* Header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 pb-4 border-b border-slate-200">
         <div>
-          <span className="text-[10px] font-semibold uppercase tracking-wider text-indigo-600">
+          <span className="text-[10px] font-semibold uppercase tracking-wider text-brand-600">
             {savedOnly ? 'Bookshelf' : 'Catalog'}
           </span>
           <h1 className="text-2xl font-bold tracking-tight text-slate-900 mt-1">
@@ -364,7 +364,7 @@ export function ClassesPage() {
   return (
     <div className="space-y-6 max-w-7xl mx-auto pb-12">
       <div className="pb-4 border-b border-slate-200">
-        <span className="text-[10px] font-semibold uppercase tracking-wider text-indigo-600">Courses</span>
+        <span className="text-[10px] font-semibold uppercase tracking-wider text-brand-600">Courses</span>
         <h1 className="text-2xl font-bold tracking-tight text-slate-900 mt-1">Registered study courses</h1>
         <p className="text-sm text-slate-500 mt-1">
           Curriculum organized by course codes and departments.
@@ -393,7 +393,7 @@ export function ClassesPage() {
                 <span className="text-[11px] text-slate-400">Curated by trusted peers</span>
                 <Link
                   to={`/notes?class=${c.id}`}
-                  className="inline-flex items-center gap-1 text-xs font-semibold text-indigo-600 hover:text-indigo-700"
+                  className="inline-flex items-center gap-1 text-xs font-semibold text-brand-600 hover:text-brand-700"
                 >
                   Browse Course <ArrowRight className="w-3.5 h-3.5" />
                 </Link>

@@ -24,11 +24,11 @@ export function TrustProgressWidget() {
           </p>
         </div>
 
-        <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white dark:bg-zinc-800 border-2 border-indigo-200 dark:border-indigo-800 text-xs font-bold shrink-0 shadow-xs">
-          <span className="font-mono text-indigo-600 dark:text-indigo-400 text-sm">{cleanCount}</span>
+        <div className="flex items-center gap-2 px-3.5 py-2 rounded-xl bg-white dark:bg-zinc-800 border-2 border-brand-200 dark:border-brand-800 text-xs font-bold shrink-0 shadow-xs">
+          <span className="font-mono text-brand-600 dark:text-brand-400 text-sm">{cleanCount}</span>
           <span className="text-stone-300 dark:text-zinc-600">/</span>
           <span className="font-mono text-emerald-600 dark:text-emerald-400 text-sm">{threshold}</span>
-          <span className="text-[11px] font-semibold text-indigo-700 dark:text-indigo-300 ml-1">Approvals</span>
+          <span className="text-[11px] font-semibold text-brand-700 dark:text-brand-300 ml-1">Approvals</span>
         </div>
       </div>
 

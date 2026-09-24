@@ -84,7 +84,7 @@ export function Table<T extends Record<string, any>>({
               setSearch(e.target.value)
               setCurrentPage(1)
             }}
-            className="w-full pl-9 pr-3 py-2 text-xs bg-white dark:bg-zinc-800/70 border border-indigo-200/80 dark:border-zinc-700/80 rounded-xl text-stone-800 dark:text-zinc-200 placeholder-stone-400 dark:placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-indigo-400/25 focus:border-indigo-400 shadow-2xs transition-all"
+            className="w-full pl-9 pr-3 py-2 text-xs bg-white dark:bg-zinc-800/70 border border-brand-200/80 dark:border-zinc-700/80 rounded-xl text-stone-800 dark:text-zinc-200 placeholder-stone-400 dark:placeholder-zinc-500 focus:outline-none focus:ring-2 focus:ring-brand-400/25 focus:border-brand-400 shadow-2xs transition-all"
           />
         </div>
         <span className="text-xs font-medium text-stone-500 dark:text-zinc-400 self-end sm:self-center">
@@ -93,10 +93,10 @@ export function Table<T extends Record<string, any>>({
       </div>
 
       {/* Table Container */}
-      <div className="border border-indigo-100/90 dark:border-zinc-800 rounded-2xl overflow-hidden bg-gradient-to-b from-white via-white to-indigo-50/15 dark:from-zinc-900 dark:via-zinc-900 dark:to-zinc-900/90 shadow-xs">
+      <div className="border border-brand-100/90 dark:border-zinc-800 rounded-2xl overflow-hidden bg-gradient-to-b from-white via-white to-brand-50/15 dark:from-zinc-900 dark:via-zinc-900 dark:to-zinc-900/90 shadow-xs">
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs text-stone-700 dark:text-zinc-300">
-            <thead className="bg-gradient-to-r from-slate-50/90 via-indigo-50/40 to-purple-50/40 dark:from-zinc-800/80 dark:via-indigo-950/20 dark:to-zinc-800/80 border-b border-indigo-100/80 dark:border-zinc-800 text-stone-600 dark:text-zinc-300 uppercase tracking-wider font-semibold text-[10px]">
+            <thead className="bg-gradient-to-r from-slate-50/90 via-brand-50/40 to-amber-50/40 dark:from-zinc-800/80 dark:via-brand-950/20 dark:to-zinc-800/80 border-b border-brand-100/80 dark:border-zinc-800 text-stone-600 dark:text-zinc-300 uppercase tracking-wider font-semibold text-[10px]">
               <tr>
                 {columns.map((col) => (
                   <th key={col.key} className="py-3.5 px-4 font-bold">
@@ -104,7 +104,7 @@ export function Table<T extends Record<string, any>>({
                       <button
                         type="button"
                         onClick={() => handleSort(col.key)}
-                        className="inline-flex items-center gap-1.5 hover:text-indigo-600 dark:hover:text-indigo-400 font-semibold transition-colors"
+                        className="inline-flex items-center gap-1.5 hover:text-brand-600 dark:hover:text-brand-400 font-semibold transition-colors"
                       >
                         {col.label}
                         <ArrowUpDown className="w-3 h-3 text-stone-400 dark:text-zinc-500" />
@@ -116,12 +116,12 @@ export function Table<T extends Record<string, any>>({
                 ))}
               </tr>
             </thead>
-            <tbody className="divide-y divide-indigo-50/60 dark:divide-zinc-800/60">
+            <tbody className="divide-y divide-brand-50/60 dark:divide-zinc-800/60">
               {paginatedData.length > 0 ? (
                 paginatedData.map((item, idx) => (
                   <tr
                     key={item.id || idx}
-                    className="hover:bg-indigo-50/40 dark:hover:bg-indigo-950/30 transition-colors"
+                    className="hover:bg-brand-50/40 dark:hover:bg-brand-950/30 transition-colors"
                   >
                     {columns.map((col) => (
                       <td key={col.key} className="py-3.5 px-4">

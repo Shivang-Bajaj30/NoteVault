@@ -11,7 +11,7 @@ export function DemoPersonaBar() {
     <div className="bg-white text-slate-700 border-b border-slate-200 px-4 py-2 text-xs flex flex-wrap items-center justify-between gap-2.5">
       <div className="flex items-center gap-2">
         <span className="flex items-center gap-1.5 font-semibold text-slate-700 uppercase tracking-wide">
-          <FlaskConical className="w-3.5 h-3.5 text-indigo-600" />
+          <FlaskConical className="w-3.5 h-3.5 text-brand-600" />
           Demo roles
         </span>
         <span className="text-slate-400 hidden md:inline">
@@ -25,7 +25,7 @@ export function DemoPersonaBar() {
           onClick={() => switchPersona('student')}
           className={`px-2.5 py-1 rounded-full text-xs font-medium border transition-colors flex items-center gap-1.5 ${
             user?.role === 'student'
-              ? 'bg-indigo-600 text-white border-indigo-600'
+              ? 'bg-brand-600 text-white border-brand-600'
               : 'bg-white text-slate-600 border-slate-200 hover:bg-slate-50'
           }`}
         >

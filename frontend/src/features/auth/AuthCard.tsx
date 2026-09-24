@@ -62,7 +62,7 @@ export function AuthCard({ mode }: AuthCardProps) {
   return (
     <Card className="max-w-md w-full mx-auto p-8 shadow-md">
       <div className="text-center mb-6">
-        <div className="w-12 h-12 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-600 mx-auto mb-3">
+        <div className="w-12 h-12 rounded-xl bg-brand-50 flex items-center justify-center text-brand-600 mx-auto mb-3">
           <BookOpen className="w-6 h-6" />
         </div>
         <h1 className="text-xl font-bold tracking-tight text-slate-900">
@@ -188,7 +188,7 @@ export function AuthCard({ mode }: AuthCardProps) {
             <button type="button" onClick={() => fillDemoCreds('diego@notevault.com')} className="px-2 py-0.5 rounded bg-amber-100 hover:bg-amber-200 text-amber-800">
               Diego (Unproven)
             </button>
-            <button type="button" onClick={() => fillDemoCreds('student@notevault.com')} className="px-2 py-0.5 rounded bg-indigo-100 hover:bg-indigo-200 text-indigo-800">
+            <button type="button" onClick={() => fillDemoCreds('student@notevault.com')} className="px-2 py-0.5 rounded bg-brand-100 hover:bg-brand-200 text-brand-800">
               Student
             </button>
           </div>
@@ -199,12 +199,12 @@ export function AuthCard({ mode }: AuthCardProps) {
         {isSignup ? (
           <p>
             Already have an account?{' '}
-            <Link to="/login" className="font-semibold text-indigo-600 hover:underline">Sign in</Link>
+            <Link to="/login" className="font-semibold text-brand-600 hover:underline">Sign in</Link>
           </p>
         ) : (
           <p>
             Don't have an account?{' '}
-            <Link to="/signup" className="font-semibold text-indigo-600 hover:underline">Create an account</Link>
+            <Link to="/signup" className="font-semibold text-brand-600 hover:underline">Create an account</Link>
           </p>
         )}
       </div>
