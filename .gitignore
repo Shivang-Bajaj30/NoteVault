@@ -1,0 +1,50 @@
+# Environment and local secrets
+.env
+.env.*
+!.env.example
+!.env.*.example
+
+# Dependencies
+node_modules/
+
+# Java and frontend build output
+target/
+dist/
+dist-ssr/
+build/
+out/
+
+# Logs, reports, and local runtime data
+*.log
+logs/
+coverage/
+.cache/
+*.pid
+*.seed
+*.sqlite
+*.sqlite3
+*.db
+
+# IDE and operating-system files
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.iml
+.DS_Store
+Thumbs.db
+*.suo
+*.user
+*.swp
+*.swo
+
+# Local certificates and private keys
+*.pem
+*.key
+*.p12
+*.pfx
+*.jks
+
+# Python caches
+__pycache__/
+.pytest_cache/
+*.py[cod]
