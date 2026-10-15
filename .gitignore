@@ -1,50 +1,41 @@
-# Environment and local secrets
+# Sensitive credentials and local environment files
 .env
-.env.*
-!.env.example
-!.env.*.example
+*.env
+!*.env.example
+atlas-credentials.env
 
 # Dependencies
 node_modules/
+**/node_modules/
 
-# Java and frontend build output
-target/
+# Build artifacts
 dist/
+**/dist/
 dist-ssr/
 build/
+target/
 out/
 
-# Logs, reports, and local runtime data
+# Logs and runtime databases
 *.log
 logs/
-coverage/
-.cache/
-*.pid
-*.seed
 *.sqlite
 *.sqlite3
 *.db
+.cache/
 
-# IDE and operating-system files
+# IDE, OS, and tool configurations
 .idea/
 .vscode/*
 !.vscode/extensions.json
-*.iml
+.freebuff/
 .DS_Store
 Thumbs.db
-*.suo
-*.user
-*.swp
-*.swo
 
-# Local certificates and private keys
-*.pem
-*.key
-*.p12
-*.pfx
-*.jks
-
-# Python caches
+# Python bytecode and caches
 __pycache__/
-.pytest_cache/
+**/__pycache__/
 *.py[cod]
+.pytest_cache/
+.venv/
+venv/
